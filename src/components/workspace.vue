@@ -10,7 +10,14 @@
       @onClearAll="onClearAll"
     ></composer>
     <draggable class="list-group" :list="list" group="components">
-      <div class="list-group-item" v-for="(element) in list" :key="element.name" :is="element.name"></div>
+      <div
+        class="list-group-item"
+        v-for="(element) in list"
+        :key="element.name"
+        :is="element.name"
+        :chords="chords"
+        :currentChord="currentChord"
+      ></div>
     </draggable>
   </section>
 </template>
