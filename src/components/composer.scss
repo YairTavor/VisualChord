@@ -1,0 +1,125 @@
+%composer-chord {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: 100px;
+  height: 100px;
+  flex: 0 0 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background: rgba(0, 100, 255, 0.16);
+  }
+}
+
+.composer {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 10px;
+  border-radius: 5px;
+  flex: 1;
+}
+
+.composer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.composer__title {
+  margin: 0 0 10px;
+}
+
+.composer__actions {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.composer__add-chord {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 5px;
+  background: rgba(0, 100, 255, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+
+  &:hover {
+    background: rgba(0, 100, 255, 1);
+  }
+}
+
+.composer__add-chord--inline {
+  @extend .composer__add-chord;
+  margin: 0;
+}
+
+.composer__chords-container--empty {
+  color: rgba(255, 255, 255, 0.47);
+  text-align: center;
+  padding: 30px;
+}
+
+.composer__empty-chords-description {
+  margin: 40px 0 0;
+}
+
+.composer__chords-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.composer__trash {
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.16);
+  position: relative;
+}
+
+.composer__trash-icon-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.composer__trash-icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.composer__trash-drop {
+  width: 50px;
+  min-height: 100px;
+  height: 100%;
+  z-index: 1;
+}
+
+.composer__chords {
+  display: flex;
+  flex-flow: wrap;
+  flex: 1;
+}
+
+.composer__chord {
+  @extend %composer-chord;
+}
+
+.composer__chord--current {
+  @extend %composer-chord;
+  background: rgba(0, 100, 255, 0.8);
+  &:hover {
+    background: rgba(0, 100, 255, 1);
+  }
+}

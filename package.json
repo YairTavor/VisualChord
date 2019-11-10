@@ -1,0 +1,25 @@
+{
+  "name": "visual-chord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/YairTavor/VisualChord.git",
+  "author": "Yair Tavor",
+  "license": "MIT",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/vue-fontawesome": "^0.1.8",
+    "vue": "^2.6.10",
+    "vuedraggable": "^2.23.2"
+  },
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.0.2",
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.23.3",
+    "vue-hot-reload-api": "^2.3.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  }
+}

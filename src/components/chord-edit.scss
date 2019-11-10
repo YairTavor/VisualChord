@@ -1,0 +1,38 @@
+.chord-edit {
+  background: rgba(255, 255, 255, 0.08);
+  margin: 10px 0 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.chord-edit__empty {
+  color: rgba(255, 255, 255, 0.47);
+  font-size: 14px;
+}
+
+.chord-edit__chord-props {
+  display: flex;
+}
+
+.chord-edit__prop {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.chord-edit__prop-label {
+  width: 80px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+
+.chord-edit__prop-input {
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.16);
+  color: rgba(255, 255, 255, 0.8);
+  height: 40px;
+  font-size: 16px;
+}
