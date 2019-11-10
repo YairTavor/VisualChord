@@ -42,12 +42,16 @@ export default class Chord {
         quality: getKeyBySign(matches[2], qualities),
         extension: getKeyBySign(matches[3], extensions),
         bass: matches[4]
-          ? getKeyBySign(matches[4].toUpperCase().replace("#", "♯"), roots)
+          ? getKeyBySign(
+              matches[4]
+                .toUpperCase()
+                .replace("/", "")
+                .replace("#", "♯"),
+              roots
+            )
           : ""
       };
-      console.log(chord);
       result = new Chord(chord);
-      console.log(result);
     }
     return result;
   }
