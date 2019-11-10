@@ -59,7 +59,7 @@ export const extensions = {
     displayName: "7"
   },
   MAJOR7: {
-    sign: "M7",
+    sign: "maj7",
     displayName: "Major 7"
   },
   ADD9: {

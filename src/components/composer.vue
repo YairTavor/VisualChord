@@ -6,6 +6,14 @@
         <div class="composer__add-chord" @click="addChord()">
           <font-awesome-icon icon="plus" />
         </div>
+        <div>
+          <input
+            class="composer__quick-add"
+            type="text"
+            placeholder="Quick Add"
+            @keydown="handelQuickSave($event)"
+          />
+        </div>
       </div>
     </header>
 
@@ -23,6 +31,9 @@
         <div class="composer__trash">
           <div class="composer__trash-icon-container">
             <font-awesome-icon icon="trash" class="composer__trash-icon" />
+          </div>
+          <div class="composer__clear-all">
+            <button class="composer__clear-all-button" @click="clarAll">Clear All</button>
           </div>
           <draggable
             :list="trash"
@@ -65,6 +76,19 @@ export default {
     },
     addChord() {
       this.$emit("onChordAdded", new Chord());
+    },
+    clarAll() {
+      this.$emit("onClearAll");
+      this.trash = [];
+    },
+    handelQuickSave(event) {
+      if (event.which === 13) {
+        const chord = Chord.parse(event.target.value.toLowerCase());
+        if (chord) {
+          this.$emit("onChordAdded", chord);
+        }
+        event.target.value = "";
+      }
     }
   },
   components: {

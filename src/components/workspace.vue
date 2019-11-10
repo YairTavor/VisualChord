@@ -7,6 +7,7 @@
       @onChordSelected="onChordSelected"
       @onChordChanged="onChordChanged"
       @onChordAdded="onChordAdded"
+      @onClearAll="onClearAll"
     ></composer>
     <draggable class="list-group" :list="list" group="components">
       <div class="list-group-item" v-for="(element) in list" :key="element.name" :is="element.name"></div>
@@ -38,6 +39,9 @@ export default {
     onChordAdded(chord) {
       this.chords.push(chord);
       this.currentChord = chord;
+    },
+    onClearAll() {
+      this.chords = [];
     }
   },
   components: {

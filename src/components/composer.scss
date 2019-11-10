@@ -60,6 +60,16 @@
   margin: 0;
 }
 
+.composer__quick-add {
+  border-radius: 5px;
+  padding: 5px 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 100, 255, 0.16);
+  font-size: 14px;
+  width: 70px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .composer__chords-container--empty {
   color: rgba(255, 255, 255, 0.47);
   text-align: center;
@@ -104,6 +114,22 @@
   min-height: 100px;
   height: 100%;
   z-index: 1;
+}
+
+.composer__clear-all {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.composer__clear-all-button {
+  display: block;
+  background: rgba(255, 255, 255, 0.16);
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  width: 100%;
 }
 
 .composer__chords {
