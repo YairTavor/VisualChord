@@ -51,6 +51,20 @@
   background: linear-gradient(135deg, #45484d 0%, #000000 100%);
 }
 
+.piano-roll__sharp--selected {
+  @extend .piano-roll__sharp;
+  color: #fff;
+  background: #0064ff;
+  background: linear-gradient(135deg, #0064ff 0%, #043177 100%);
+}
+
+.piano-roll__note--selected {
+  @extend .piano-roll__note;
+  color: #fff;
+  background: #0064ff;
+  background: linear-gradient(135deg, #0064ff 0%, #043177 100%);
+}
+
 .piano-roll__sharp--space {
   @extend .piano-roll__sharp;
   background: none;
