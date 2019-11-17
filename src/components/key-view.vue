@@ -1,5 +1,5 @@
 <template>
-  <div>key view</div>
+  <div>key view shows the Available chords and notes in a key.</div>
 </template>
 
 <script>

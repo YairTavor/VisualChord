@@ -21,7 +21,7 @@ export default {
     return {
       menuList: [
         { name: "key-view", displayName: "Key View" },
-        { name: "piano-roll", displayName: "Piao Roll" }
+        { name: "piano-chord", displayName: "Piao Chord" }
       ],
       activeList: []
     };

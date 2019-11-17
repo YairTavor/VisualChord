@@ -24,7 +24,7 @@
 
 <script>
 import draggable from "vuedraggable";
-import pianoRoll from "./piano-roll";
+import pianoChord from "./piano-chord";
 import keyView from "./key-view";
 import composer from "./composer";
 
@@ -54,7 +54,7 @@ export default {
   components: {
     draggable,
     composer,
-    "piano-roll": pianoRoll,
+    "piano-chord": pianoChord,
     "key-view": keyView
   }
 };
