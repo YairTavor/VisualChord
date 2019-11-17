@@ -79,3 +79,92 @@ export const extensions = {
     displayName: "13"
   }
 };
+
+export const majorMinor = {
+  minor: 0,
+  major: 1,
+  diminished: 2
+};
+
+export const majorMinorQuality = {
+  flat: -1,
+  perfect: 0,
+  sharp: 1
+};
+
+export const step = {
+  half: 1,
+  whole: 2
+};
+
+const { whole, half } = step;
+const { major, minor, diminished } = majorMinor;
+const { perfect, sharp, flat } = majorMinorQuality;
+export const scales = {
+  major: {
+    name: "Major",
+    formula: [whole, whole, half, whole, whole, whole, half],
+    majorMinor: [major, minor, minor, major, major, minor, diminished],
+    majorMinorQuality: [
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      perfect
+    ]
+  },
+  dorian: {
+    name: "Dorian",
+    formula: [whole, half, whole, whole, whole, half, whole],
+    majorMinor: [minor, minor, major, major, minor, diminished, major],
+    majorMinorQuality: [perfect, perfect, flat, perfect, perfect, perfect, flat]
+  },
+  phrygian: {
+    name: "Phrygian",
+    formula: [half, whole, whole, whole, half, whole, whole],
+    majorMinor: [minor, major, major, minor, diminished, major, minor],
+    majorMinorQuality: [perfect, flat, flat, perfect, perfect, flat, flat]
+  },
+  lydian: {
+    name: "Lydian",
+    formula: [whole, whole, whole, half, whole, whole, half],
+    majorMinor: [major, major, minor, diminished, major, minor, minor],
+    majorMinorQuality: [
+      perfect,
+      perfect,
+      perfect,
+      sharp,
+      perfect,
+      perfect,
+      perfect
+    ]
+  },
+  mixolydian: {
+    name: "Mixolydian",
+    formula: [whole, whole, half, whole, whole, half, whole],
+    majorMinor: [major, minor, diminished, major, minor, minor, major],
+    majorMinorQuality: [
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      perfect,
+      flat
+    ]
+  },
+  minor: {
+    name: "Minor",
+    formula: [whole, half, whole, whole, half, whole, whole],
+    majorMinor: [minor, diminished, major, minor, minor, major, major],
+    majorMinorQuality: [perfect, perfect, flat, perfect, perfect, flat, flat]
+  },
+  locrian: {
+    name: "Locrian",
+    formula: [half, whole, whole, half, whole, whole, whole],
+    majorMinor: [diminished, major, minor, minor, major, major, minor],
+    majorMinorQuality: [perfect, flat, flat, perfect, flat, flat, flat]
+  }
+};
