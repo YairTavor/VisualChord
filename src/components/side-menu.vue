@@ -12,11 +12,11 @@
       :group="{ name: 'components', pull: 'clone', put: false}"
       :sort="false"
     >
-      <div
-        class="side-menu__item"
-        v-for="element in list"
-        :key="element.name"
-      >{{ element.displayName }}</div>
+      <div class="side-menu__item" v-for="element in list" :key="element.name">
+        <font-awesome-icon icon="box"></font-awesome-icon>
+        &nbsp;
+        {{ element.displayName }}
+      </div>
     </draggable>
   </nav>
 </template>

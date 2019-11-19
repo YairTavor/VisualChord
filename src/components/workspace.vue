@@ -9,7 +9,12 @@
       @onChordAdded="onChordAdded"
       @onClearAll="onClearAll"
     ></composer>
-    <draggable class="list-group" :list="list" group="components">
+    <draggable v-if="!list.length" :class="dropClass" :list="list" group="components">
+      <div class="workplace__empty">
+        <font-awesome-icon icon="box-open"></font-awesome-icon>&nbsp;Modules
+      </div>
+    </draggable>
+    <draggable v-else class="workspace__list-group" :list="list" group="components">
       <div
         class="list-group-item"
         v-for="(element) in list"
@@ -35,7 +40,8 @@ export default {
   data() {
     return {
       chords: [],
-      currentChord: {}
+      currentChord: {},
+      dropClass: "workspace__list-group--empty"
     };
   },
   methods: {

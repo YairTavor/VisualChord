@@ -1,3 +1,5 @@
+@import "../styles/dropdowns.scss";
+
 .chord-edit {
   background: rgba(255, 255, 255, 0.08);
   margin: 10px 0 0;
@@ -28,11 +30,5 @@
 }
 
 .chord-edit__prop-input {
-  border: 1px solid transparent;
-  border-radius: 3px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.16);
-  color: rgba(255, 255, 255, 0.8);
-  height: 40px;
-  font-size: 16px;
+  @extend %dropdown;
 }
