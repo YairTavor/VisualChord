@@ -15,14 +15,15 @@
       </div>
     </draggable>
     <draggable v-else class="workspace__list-group" :list="list" group="components">
-      <div
-        class="list-group-item"
-        v-for="(element) in list"
+      <module
+        class="workspace__module"
+        v-for="(element, index) in list"
         :key="element.name"
-        :is="element.name"
-        :chords="chords"
-        :currentChord="currentChord"
-      ></div>
+        :title="element.displayName"
+        @onModuleClose="onClose(index)"
+      >
+        <div :is="element.name" :chords="chords" :currentChord="currentChord"></div>
+      </module>
     </draggable>
   </section>
 </template>
@@ -32,6 +33,7 @@ import draggable from "vuedraggable";
 import pianoChord from "./piano-chord";
 import keyView from "./key-view";
 import composer from "./composer";
+import module from "./module";
 
 import "./workspace.scss";
 
@@ -55,11 +57,15 @@ export default {
     },
     onClearAll() {
       this.chords = [];
+    },
+    onClose(index) {
+      this.$emit("onModuleClose", index);
     }
   },
   components: {
     draggable,
     composer,
+    module,
     "piano-chord": pianoChord,
     "key-view": keyView
   }

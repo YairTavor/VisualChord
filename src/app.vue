@@ -3,7 +3,7 @@
     <header class="layout__header">Visual Chord</header>
     <div class="layout__container">
       <side-menu :list="menuList"></side-menu>
-      <workspace :list="activeList"></workspace>
+      <workspace :list="activeList" @onModuleClose="onClose"></workspace>
     </div>
     <footer>Copywrite 2019 Yair Tavor</footer>
   </div>
@@ -25,6 +25,11 @@ export default {
       ],
       activeList: []
     };
+  },
+  methods: {
+    onClose(index) {
+      this.activeList.splice(index, 1);
+    }
   },
   components: {
     draggable,

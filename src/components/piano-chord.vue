@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>Piano Chord</h2>
-    <p>This will show you which notes to play for the selected Composer chrod</p>
+    <p>This will show you which notes to play for the selected Composer chord</p>
     <p v-if="!currentChord.root">To get starded, pick or create a chord in the Composer</p>
     <piano-roll v-else :selectedNotes="getNotesInChord()"></piano-roll>
   </div>
@@ -11,6 +10,7 @@
 import { octaveNotes } from "../lib/notes";
 import { roots } from "../lib/enums";
 import pianoRoll from "./piano-roll";
+
 export default {
   props: {
     currentChord: { tyep: Object, default: () => ({}) }
@@ -42,7 +42,8 @@ export default {
     }
   },
   components: {
-    "piano-roll": pianoRoll
+    "piano-roll": pianoRoll,
+    module
   }
 };
 </script>

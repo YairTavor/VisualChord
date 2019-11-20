@@ -1,7 +1,6 @@
 <template>
   <div>
-    <h2>Key View</h2>
-    <div>key view shows the Available chords and notes in a key.</div>
+    <p>key view shows the Available chords and notes in a key.</p>
     <div>
       <select class="key-view__dropdown" v-model="selectedRoot">
         <option

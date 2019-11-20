@@ -30,3 +30,11 @@
 .sortable-ghost + section {
   display: none;
 }
+
+.workspace__module {
+  border: 1px solid rgba(#000, 0.6);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px 0;
+  background: #1b1b1b;
+}
