@@ -1,5 +1,47 @@
 @import "../styles/dropdowns.scss";
+@import "./composer.scss";
 
 .key-view__dropdown {
   @extend %dropdown;
+}
+
+.key-view__subtitle {
+  margin: 10px 0;
+  font-style: italic;
+}
+
+.key-view__chord-list {
+  display: flex;
+  counter-reset: chords;
+}
+
+.key-view__chord-formula-list {
+  display: flex;
+}
+
+.key-view__chord {
+  @extend %composer-chord;
+  counter-increment: chords;
+  position: relative;
+
+  &::before {
+    content: counter(chords);
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+.key-view__chord-name {
+  position: relative;
+  top: 10px;
+}
+
+.key-view__chord-formula {
+  @extend %composer-chord;
+  height: 50px;
 }

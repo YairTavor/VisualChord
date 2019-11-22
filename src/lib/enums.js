@@ -1,16 +1,16 @@
 export const roots = {
   A: { sign: "A", alternate: null },
-  ASharp: { sign: "A♯", alternate: "B♭" },
+  ASharp: { sign: "A#", alternate: "B♭" },
   B: { sign: "B", alternate: null },
   C: { sign: "C", alternate: null },
-  CSharp: { sign: "C♯", alternate: "D♭" },
+  CSharp: { sign: "C#", alternate: "D♭" },
   D: { sign: "D", alternate: null },
-  DSharp: { sign: "D♯", alternate: "E♭" },
+  DSharp: { sign: "D#", alternate: "E♭" },
   E: { sign: "E", alternate: null },
   F: { sign: "F", alternate: null },
-  FSharp: { sign: "F♯", alternate: "G♭" },
+  FSharp: { sign: "F#", alternate: "G♭" },
   G: { sign: "G", alternate: null },
-  GSharp: { sign: "G♯", alternate: "A♭" }
+  GSharp: { sign: "G#", alternate: "A♭" }
 };
 
 export const qualities = {
@@ -167,4 +167,10 @@ export const scales = {
     majorMinor: [diminished, major, minor, minor, major, major, minor],
     majorMinorQuality: [perfect, flat, flat, perfect, flat, flat, flat]
   }
+};
+
+export const notations = {
+  sharp: "♯",
+  flat: "♭",
+  diminished: "°"
 };

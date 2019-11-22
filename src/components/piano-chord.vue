@@ -35,7 +35,7 @@ export default {
         });
 
         if (this.currentChord.bass) {
-          result.push(this.currentChord.bass.sign.replace("♯", "#") + "3");
+          result.push(this.currentChord.bass.sign + "3");
         }
       }
       return result;

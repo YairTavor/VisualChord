@@ -11,7 +11,7 @@ const getKeyBySign = (sign, collection) => {
 export default class Chord {
   constructor(chord = {}) {
     const {
-      root = roots.A,
+      root = roots.C,
       quality = qualities.MAJOR,
       extension = extensions.NONE,
       bass = ""
@@ -35,7 +35,7 @@ export default class Chord {
 
   get notes() {
     let notes;
-    const root = this.root.sign.replace("♯", "#");
+    const root = this.root.sign;
     const rootIndex = allNotes.indexOf(root);
     const minorSecondIndex = rootIndex + 1;
     const majorSecondIndex = rootIndex + 2;
@@ -116,17 +116,11 @@ export default class Chord {
     let result = null;
     if (matches) {
       const chord = {
-        root: getKeyBySign(matches[1].toUpperCase().replace("#", "♯"), roots),
+        root: getKeyBySign(matches[1].toUpperCase(), roots),
         quality: getKeyBySign(matches[2], qualities),
         extension: getKeyBySign(matches[3], extensions),
         bass: matches[4]
-          ? getKeyBySign(
-              matches[4]
-                .toUpperCase()
-                .replace("/", "")
-                .replace("#", "♯"),
-              roots
-            )
+          ? getKeyBySign(matches[4].toUpperCase().replace("/", ""), roots)
           : ""
       };
       result = new Chord(chord);
