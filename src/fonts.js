@@ -6,10 +6,19 @@ import {
   faMusic,
   faBoxOpen,
   faBox,
-  faTimesCircle
+  faTimesCircle,
+  faChevronCircleDown
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faPlus, faTrash, faMusic, faBoxOpen, faBox, faTimesCircle);
+library.add(
+  faPlus,
+  faTrash,
+  faMusic,
+  faBoxOpen,
+  faBox,
+  faTimesCircle,
+  faChevronCircleDown
+);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

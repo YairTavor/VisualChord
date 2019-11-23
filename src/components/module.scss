@@ -1,13 +1,42 @@
 .module__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .module__title {
   margin: 0;
   padding: 0;
+  margin-right: auto;
 }
 
 .module__close {
   cursor: pointer;
+  margin-left: 10px;
+}
+
+.module__toggle--open {
+  cursor: pointer;
+  margin-left: 10px;
+
+  svg {
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.module__toggle--closed {
+  @extend .module__toggle--open;
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.module__content--open {
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.module__content--closed {
+  @extend .module__content--open;
+  max-height: 0;
 }

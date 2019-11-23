@@ -83,7 +83,7 @@ export default {
     },
     handelQuickSave(event) {
       if (event.which === 13) {
-        const chord = Chord.parse(event.target.value.toLowerCase());
+        const chord = Chord.parse(event.target.value);
         if (chord) {
           this.$emit("onChordAdded", chord);
         }

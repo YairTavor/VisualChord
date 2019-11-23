@@ -53,6 +53,7 @@ import {
 } from "../lib/enums";
 import { octaveNotes } from "../lib/notes";
 import pianoRoll from "./piano-roll";
+import Chord from "../lib/chord";
 import "./key-view.scss";
 
 const chordFormulaSigns = ["i", "ii", "iii", "iv", "v", "vi", "vii"];
@@ -147,6 +148,12 @@ export default {
       });
 
       return result;
+    }
+  },
+  methods: {
+    onChordClick(chord) {
+      const chordInstance = Chord.parse(chord);
+      this.chords.push(chordInstance);
     }
   },
   components: {

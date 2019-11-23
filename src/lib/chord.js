@@ -111,19 +111,22 @@ export default class Chord {
   }
 
   static parse(chord) {
-    const regex = /(^[abcdefg]#?)(m|dim|aug|sus2|sus4|5)?(6|7|maj7|\(9\)|9|11|13)?(\/[abcdefg]#?)?/;
-    const matches = chord.match(regex);
     let result = null;
-    if (matches) {
-      const chord = {
-        root: getKeyBySign(matches[1].toUpperCase(), roots),
-        quality: getKeyBySign(matches[2], qualities),
-        extension: getKeyBySign(matches[3], extensions),
-        bass: matches[4]
-          ? getKeyBySign(matches[4].toUpperCase().replace("/", ""), roots)
-          : ""
-      };
-      result = new Chord(chord);
+    if (chord) {
+      const regex = /(^[abcdefg]#?)(m|dim|aug|sus2|sus4|5)?(6|7|maj7|\(9\)|9|11|13)?(\/[abcdefg]#?)?/;
+      const matches = chord.toLowerCase().match(regex);
+
+      if (matches) {
+        const chord = {
+          root: getKeyBySign(matches[1].toUpperCase(), roots),
+          quality: getKeyBySign(matches[2], qualities),
+          extension: getKeyBySign(matches[3], extensions),
+          bass: matches[4]
+            ? getKeyBySign(matches[4].toUpperCase().replace("/", ""), roots)
+            : ""
+        };
+        result = new Chord(chord);
+      }
     }
     return result;
   }
