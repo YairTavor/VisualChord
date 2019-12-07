@@ -9,12 +9,16 @@
 
 <script>
 import { getSample } from "../lib/sampleLoader";
+import octave from "../lib/octave";
 
 export default {
   props: ["chords", "currentChord"],
   methods: {
     play() {
-      getSample("g4").then(sample => sample.play());
+      const notes = octave(this.currentChord);
+      Promise.all(notes.map(note => getSample(note))).then(samples =>
+        samples.forEach(sample => sample.play())
+      );
     }
   }
 };
