@@ -9,12 +9,22 @@
       @onChordAdded="onChordAdded"
       @onClearAll="onClearAll"
     ></composer>
-    <draggable v-if="!list.length" :class="dropClass" :list="list" group="components">
+    <draggable
+      v-if="!list.length"
+      :class="dropClass"
+      :list="list"
+      group="components"
+    >
       <div class="workplace__empty">
         <font-awesome-icon icon="box-open"></font-awesome-icon>&nbsp;Modules
       </div>
     </draggable>
-    <draggable v-else class="workspace__list-group" :list="list" group="components">
+    <draggable
+      v-else
+      class="workspace__list-group"
+      :list="list"
+      group="components"
+    >
       <module
         class="workspace__module"
         v-for="(element, index) in list"
@@ -22,7 +32,12 @@
         :title="element.displayName"
         @onModuleClose="onClose(index)"
       >
-        <div :is="element.name" :chords="chords" :currentChord="currentChord"></div>
+        <div
+          :is="element.name"
+          :chords="chords"
+          :currentChord="currentChord"
+          :next="next"
+        ></div>
       </module>
     </draggable>
   </section>
@@ -42,12 +57,14 @@ export default {
     return {
       chords: [],
       currentChord: {},
+      currentChordIndex: -1,
       dropClass: "workspace__list-group--empty"
     };
   },
   methods: {
-    onChordSelected(chord) {
+    onChordSelected({ chord, index }) {
       this.currentChord = chord;
+      this.currentChordIndex = index;
     },
     onChordChanged() {},
     onChordAdded(chord) {
@@ -56,9 +73,21 @@ export default {
     },
     onClearAll() {
       this.chords = [];
+      this.currentChord = {};
+      this.currentChordIndex = -1;
     },
     onClose(index) {
       this.$emit("onModuleClose", index);
+    },
+    next() {
+      if (this.chords.length) {
+        let index = this.currentChordIndex + 1;
+        if (index >= this.chords.length) {
+          index = 0;
+        }
+        this.currentChord = this.chords[index];
+        this.currentChordIndex = index;
+      }
     }
   },
   components: {

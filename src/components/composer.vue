@@ -18,12 +18,17 @@
     </header>
 
     <div v-if="!chords.length" class="composer__chords-container--empty">
-      <font-awesome-icon icon="music" size="6x" class="composer__music-icon"></font-awesome-icon>
+      <font-awesome-icon
+        icon="music"
+        size="6x"
+        class="composer__music-icon"
+      ></font-awesome-icon>
       <p class="composer__empty-chords-description">
         To get started, click the
         <span class="composer__add-chord--inline" @click="addChord()">
           <font-awesome-icon icon="plus" />
-        </span> button to create a new chord.
+        </span>
+        button to create a new chord.
       </p>
     </div>
     <div v-else>
@@ -33,7 +38,9 @@
             <font-awesome-icon icon="trash" class="composer__trash-icon" />
           </div>
           <div class="composer__clear-all">
-            <button class="composer__clear-all-button" @click="clarAll">Clear All</button>
+            <button class="composer__clear-all-button" @click="clarAll">
+              Clear All
+            </button>
           </div>
           <draggable
             :list="trash"
@@ -47,9 +54,15 @@
           <div
             v-for="(chord, index) in chords"
             :key="chord.name + index"
-            @mousedown="onSelect(chord)"
-            :class="selectedChord=== chord ? 'composer__chord--current': 'composer__chord'"
-          >{{chord.name}}</div>
+            @mousedown="onSelect(chord, index)"
+            :class="
+              selectedChord === chord
+                ? 'composer__chord--current'
+                : 'composer__chord'
+            "
+          >
+            {{ chord.name }}
+          </div>
         </draggable>
       </div>
       <chord-edit :currentChord="selectedChord"></chord-edit>
@@ -71,8 +84,8 @@ export default {
     };
   },
   methods: {
-    onSelect(chord) {
-      this.$emit("onChordSelected", chord);
+    onSelect(chord, index) {
+      this.$emit("onChordSelected", { chord, index });
     },
     addChord() {
       this.$emit("onChordAdded", new Chord());

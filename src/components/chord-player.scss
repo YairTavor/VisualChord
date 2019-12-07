@@ -1,0 +1,23 @@
+.chord-player {
+  margin: 30px 0 0;
+}
+
+.chord-player__button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 5px;
+  background: rgba(0, 100, 255, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+  color: white;
+  font-weight: bold;
+  border: 0;
+
+  &:hover {
+    background: rgba(0, 100, 255, 1);
+  }
+}
+
+.chord-player__icon {
+  margin-right: 10px;
+}

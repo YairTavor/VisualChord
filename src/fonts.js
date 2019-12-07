@@ -7,7 +7,10 @@ import {
   faBoxOpen,
   faBox,
   faTimesCircle,
-  faChevronCircleDown
+  faChevronCircleDown,
+  faRetweet,
+  faPlay,
+  faStop
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -18,7 +21,10 @@ library.add(
   faBoxOpen,
   faBox,
   faTimesCircle,
-  faChevronCircleDown
+  faChevronCircleDown,
+  faRetweet,
+  faPlay,
+  faStop
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

@@ -24,6 +24,10 @@ export default class Chord {
     });
   }
 
+  toString() {
+    return this.name;
+  }
+
   get name() {
     return (
       this.root.sign +
