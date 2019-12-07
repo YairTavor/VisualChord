@@ -13,16 +13,14 @@
 import draggable from "vuedraggable";
 import sideMenu from "./components/side-menu";
 import workspace from "./components/workspace";
+import { menuItems } from "./modules-map";
 
 import "./app.scss";
 
 export default {
   data() {
     return {
-      menuList: [
-        { name: "key-view", displayName: "Key View" },
-        { name: "piano-chord", displayName: "Piao Chord" }
-      ],
+      menuList: [...menuItems],
       activeList: []
     };
   },

@@ -124,7 +124,7 @@ export default {
         note = note.substring(0, note.length - 1);
         const quality = this.selectedScale.majorMinorQuality[index];
 
-        if (quality === majorMinorQuality.flat) {
+        /* if (quality === majorMinorQuality.flat) {
           note = octaveNotes[octaveNotes.indexOf(note) - 1];
           if (!note) {
             note = "B";
@@ -135,7 +135,7 @@ export default {
           if (!note) {
             note = "C";
           }
-        }
+        } */
 
         if (item === majorMinor.minor) {
           note += "m";

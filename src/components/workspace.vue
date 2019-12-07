@@ -30,10 +30,9 @@
 
 <script>
 import draggable from "vuedraggable";
-import pianoChord from "./piano-chord";
-import keyView from "./key-view";
 import composer from "./composer";
 import module from "./module";
+import modulesMap from "../modules-map";
 
 import "./workspace.scss";
 
@@ -66,8 +65,7 @@ export default {
     draggable,
     composer,
     module,
-    "piano-chord": pianoChord,
-    "key-view": keyView
+    ...modulesMap
   }
 };
 </script>
