@@ -13,5 +13,5 @@ export default {
 export const menuItems = [
   { name: "key-view", displayName: "Key View" },
   { name: "chord-player", displayName: "Chord Player" },
-  { name: "piano-chord", displayName: "Piano Chord" }
+  { name: "piano-chord", displayName: "Piano Chord Visualization" }
 ];

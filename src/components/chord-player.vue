@@ -26,12 +26,29 @@
         ></font-awesome-icon>
         Stop
       </button>
+
+      <button
+        :class="`chord-player__metronome${metronomeOn ? '--on' : '--off'}`"
+        @click="toggleMetronome"
+      >
+        Metronome
+      </button>
+
+      <div>
+        <vue-slider
+          v-model="metronome.speed"
+          :min="300"
+          :max="2000"
+          :interval="100"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import { getSample } from "../lib/sampleLoader";
+import metronome from "../lib/metronom";
 import octave from "../lib/octave";
 import "./chord-player.scss";
 
@@ -39,7 +56,9 @@ export default {
   props: ["chords", "currentChord", "next"],
   data() {
     return {
-      playing: true
+      playing: true,
+      metronomeOn: metronome.playing,
+      metronome
     };
   },
   methods: {
@@ -52,7 +71,7 @@ export default {
           if (this.playing) {
             loop();
           }
-        }, 2000);
+        }, metronome.speed);
       };
 
       loop();
@@ -65,6 +84,16 @@ export default {
     },
     stop() {
       this.playing = false;
+    },
+
+    toggleMetronome() {
+      if (metronome.playing) {
+        metronome.stop();
+        this.metronomeOn = false;
+      } else {
+        metronome.start();
+        this.metronomeOn = true;
+      }
     }
   }
 };

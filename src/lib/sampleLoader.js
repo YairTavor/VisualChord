@@ -59,4 +59,6 @@ const sampleFileMap = {
   'A5':  { pitch: 1, filePath: fileSource + 'a-5.wav'},
   'A#5': { pitch: 1.06, filePath: fileSource + 'a-5.wav'},
   'B5':  { pitch: 1.12, filePath: fileSource + 'a-5.wav'},
+
+  'metronome': { pitch: 1, filePath: fileSource + 'metronome.wav'}
 }

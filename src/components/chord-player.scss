@@ -3,6 +3,7 @@
 }
 
 .chord-player__button {
+  outline: 0;
   padding: 10px 20px;
   border-radius: 5px;
   margin-left: 5px;
@@ -20,4 +21,27 @@
 
 .chord-player__icon {
   margin-right: 10px;
+}
+
+.chord-player__metronome--on {
+  outline: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-left: 5px;
+  background: rgba(255, 0, 21, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+  color: white;
+  font-weight: bold;
+  border: 1px solid transparent;
+
+  &:hover {
+    background: rgba(255, 0, 21, 1);
+  }
+}
+
+.chord-player__metronome--off {
+  @extend .chord-player__metronome--on;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.16);
 }

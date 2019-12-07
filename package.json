@@ -11,6 +11,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.8",
     "howler": "^2.1.2",
     "vue": "^2.6.10",
+    "vue-slider-component": "^3.0.45",
     "vuedraggable": "^2.23.2"
   },
   "devDependencies": {
