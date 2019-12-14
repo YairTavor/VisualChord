@@ -1,0 +1,83 @@
+@import "../styles/dropdowns.scss";
+
+.library {
+  margin-top: 20px;
+}
+
+.library__subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+}
+
+.library__header {
+  margin-bottom: 20px;
+}
+
+.library__title-input {
+  @extend %dropdown;
+  padding: 0 5px;
+  width: 100%;
+  outline: 0;
+}
+
+.library__save {
+  @extend %dropdown;
+  outline: 0;
+
+  &:disabled {
+    color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.library__label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  margin: 0 0 5px;
+  display: block;
+}
+
+.library__description-wrapper {
+  margin: 20px 0;
+}
+
+.library__description {
+  @extend %dropdown;
+  width: 100%;
+  outline: 0;
+}
+
+.library__results {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.library__results-header {
+  text-align: left;
+  font-size: 12px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.library__results-item-wrapper {
+  &:nth-child(even) {
+    background: none;
+  }
+
+  &:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.library__results-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.library__results-action {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}

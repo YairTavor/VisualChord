@@ -36,6 +36,7 @@
           :is="element.name"
           :chords="chords"
           :currentChord="currentChord"
+          :setChords="setChords"
           :next="next"
         ></div>
       </module>
@@ -75,6 +76,21 @@ export default {
       this.chords = [];
       this.currentChord = {};
       this.currentChordIndex = -1;
+    },
+    setChords({ chords, currentChord }) {
+      if (chords && Array.isArray(chords)) {
+        this.chords = [...chords];
+      }
+      if (currentChord) {
+        this.currentChord = currentChord;
+        this.currentChordIndex = chords.indexOf(currentChord);
+      } else if (this.chords.length) {
+        this.currentChordIndex = 0;
+        this.currentChord = this.chords[0];
+      } else {
+        this.currentChord = {};
+        this.currentChordIndex = -1;
+      }
     },
     onClose(index) {
       this.$emit("onModuleClose", index);
