@@ -1,6 +1,6 @@
 # VisualChord
 
-![Visual Chord](https://github.com/yair-tavor/visual-chord/raw/master/visual-chord.png "Visual Chord")
+![Visual Chord](https://github.com/YairTavor/VisualChord/raw/master/visual-chord.png "Visual Chord")
 Music making helper tool that help you learn and compose chord progressions.
 
 ## How to use
