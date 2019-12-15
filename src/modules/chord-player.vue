@@ -75,10 +75,10 @@ export default {
       this.playing = true;
       const loop = () => {
         this.play();
-        this.next();
         setTimeout(() => {
           if (this.playing) {
-            loop();
+            this.next();
+            setTimeout(loop, 0);
           }
         }, Math.round(60000 / metronome.speed) * this.currentChord.bars);
       };
