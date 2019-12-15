@@ -1,7 +1,7 @@
 import { getSample } from "./sampleLoader";
 
 let isPlaying = false;
-let speed = 1000;
+let speed = 100;
 let metronomeSample;
 
 getSample("metronome").then(sample => {
@@ -14,7 +14,7 @@ const loop = () => {
       metronomeSample.play();
       loop();
     }
-  }, speed);
+  }, Math.round(60000 / speed));
 };
 
 export default {

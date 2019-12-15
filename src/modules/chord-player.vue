@@ -1,6 +1,5 @@
 <template>
   <div>
-    //TODO: set speed as BPM instead of miliseconds
     <div v-if="!currentChord.root && !chords.length" class="chord-player">
       Player will become available as soon as you have at least one chord
       selected in the composer
@@ -35,12 +34,20 @@
         Metronome
       </button>
 
-      <div>
+      <span class="chord-player__current-speed">
+        {{ metronome.speed }} BPM
+      </span>
+
+      <div class="chord-player__speed">
+        <div class="chord-player__speed-legend">
+          <span>65 BPM</span>
+          <span>240 BPM</span>
+        </div>
         <vue-slider
           v-model="metronome.speed"
-          :min="300"
-          :max="2000"
-          :interval="100"
+          :min="65"
+          :max="240"
+          :interval="1"
         />
       </div>
     </div>
@@ -73,7 +80,7 @@ export default {
           if (this.playing) {
             loop();
           }
-        }, metronome.speed);
+        }, Math.round(60000 / metronome.speed));
       };
 
       loop();

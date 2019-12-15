@@ -1,6 +1,5 @@
 <template>
   <section class="workspace">
-    <h3>Workspace</h3>
     <composer
       :chords="chords"
       :selectedChord="currentChord"
