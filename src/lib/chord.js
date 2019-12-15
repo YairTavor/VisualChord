@@ -14,13 +14,15 @@ export default class Chord {
       root = roots.C,
       quality = qualities.MAJOR,
       extension = extensions.NONE,
-      bass = ""
+      bass = "",
+      bars = 4
     } = chord;
     Object.assign(this, {
       root,
       quality,
       extension,
-      bass
+      bass,
+      bars
     });
   }
 

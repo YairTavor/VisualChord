@@ -80,7 +80,7 @@ export default {
           if (this.playing) {
             loop();
           }
-        }, Math.round(60000 / metronome.speed));
+        }, Math.round(60000 / metronome.speed) * this.currentChord.bars);
       };
 
       loop();

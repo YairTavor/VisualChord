@@ -149,3 +149,27 @@
     background: rgba(0, 100, 255, 1);
   }
 }
+
+.composer__chord-bars {
+  @extend %composer-chord;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  cursor: auto;
+}
+
+.composer__chord-bars-input {
+  background: none;
+  border: 0;
+  outline: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+  direction: rtl;
+  position: relative;
+  top: -1px;
+  right: 5px;
+  cursor: pointer;
+}
