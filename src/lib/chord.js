@@ -56,56 +56,59 @@ export default class Chord {
     const elevenIndex = rootIndex + 12 + 5;
     const thirteenIndex = rootIndex + 12 + 9;
 
-    switch (this.quality) {
-      case qualities.MAJOR:
+    const quality = (this.quality && this.quality.displayName) || "";
+    const extension = (this.extension && this.extension.displayName) || "";
+
+    switch (quality) {
+      case qualities.MAJOR.displayName:
         notes = [root, allNotes[majorThirdIndex], allNotes[perfectFifthIndex]];
         break;
-      case qualities.MINOR:
+      case qualities.MINOR.displayName:
         notes = [root, allNotes[minorThirdIndex], allNotes[perfectFifthIndex]];
         break;
-      case qualities.DIMINISHED:
+      case qualities.DIMINISHED.displayName:
         notes = [root, allNotes[minorThirdIndex], allNotes[tritoneIndex]];
         break;
-      case qualities.AUGMENTED:
+      case qualities.AUGMENTED.displayName:
         notes = [root, allNotes[majorThirdIndex], allNotes[minorSixthIndex]];
         break;
-      case qualities.SUSPENDED2:
+      case qualities.SUSPENDED2.displayName:
         notes = [root, allNotes[majorSecondIndex], allNotes[perfectFifthIndex]];
         break;
-      case qualities.SUSPENDED4:
+      case qualities.SUSPENDED4.displayName:
         notes = [
           root,
           allNotes[perfectForthIndex],
           allNotes[perfectFifthIndex]
         ];
         break;
-      case qualities.FIFTH:
+      case qualities.FIFTH.displayName:
         notes = [root, allNotes[perfectFifthIndex]];
         break;
     }
 
-    switch (this.extension) {
-      case extensions.SIX:
+    switch (extension) {
+      case extensions.SIX.displayName:
         notes.push(allNotes[majorSixthIndex]);
         break;
-      case extensions.SEVEN:
+      case extensions.SEVEN.displayName:
         notes.push(allNotes[minorSeventhIndex]);
         break;
-      case extensions.MAJOR7:
+      case extensions.MAJOR7.displayName:
         notes.push(allNotes[majorSeventhIndex]);
         break;
-      case extensions.ADD9:
+      case extensions.ADD9.displayName:
         notes.push(allNotes[nineIndex]);
         break;
-      case extensions.NINE:
+      case extensions.NINE.displayName:
         notes.push(allNotes[majorSeventhIndex]);
         notes.push(allNotes[nineIndex]);
         break;
-      case extensions.ELEVEN:
+      case extensions.ELEVEN.displayName:
         notes.push(allNotes[majorSeventhIndex]);
         notes.push(allNotes[elevenIndex]);
         break;
-      case extensions.THIRTEEN:
+      case extensions.THIRTEEN.displayName:
         notes.push(allNotes[majorSeventhIndex]);
         notes.push(allNotes[thirteenIndex]);
         break;

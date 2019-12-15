@@ -3,18 +3,18 @@
     <p>key view shows the Available chords and notes in a key.</p>
     <div>
       <select class="key-view__dropdown" v-model="selectedRoot">
-        <option
-          v-for="key in Object.keys(roots)"
-          :key="key"
-          :value="roots[key]"
-        >{{ roots[key].sign }} {{roots[key].alternate ? `(${roots[key].alternate})` : ''}}</option>
+        <option v-for="key in Object.keys(roots)" :key="key" :value="roots[key]"
+          >{{ roots[key].sign }}
+          {{ roots[key].alternate ? `(${roots[key].alternate})` : "" }}</option
+        >
       </select>
       <select class="key-view__dropdown" v-model="selectedScale">
         <option
           v-for="key in Object.keys(scales)"
           :key="key"
           :value="scales[key]"
-        >{{ scales[key].name }}</option>
+          >{{ scales[key].name }}</option
+        >
       </select>
     </div>
 
@@ -23,16 +23,22 @@
       <div class="key-view__chord-list">
         <div
           class="key-view__chord"
-          v-for="(chord) in scaleChords"
+          v-for="chord in scaleChords"
           :key="chord"
           @click="onChordClick(chord)"
         >
-          <span class="key-view__chord-name">{{chord}}</span>
+          <span class="key-view__chord-name">{{ chord }}</span>
         </div>
       </div>
       <div class="key-view__subtitle">Scale chord formula:</div>
       <div class="key-view__chord-formula-list">
-        <div class="key-view__chord-formula" v-for="step in scaleChordsFormula" :key="step">{{step}}</div>
+        <div
+          class="key-view__chord-formula"
+          v-for="step in scaleChordsFormula"
+          :key="step"
+        >
+          {{ step }}
+        </div>
       </div>
       <div class="key-view__subtitle">Scale notes:</div>
       <piano-roll :selectedNotes="scaleNotes"></piano-roll>
@@ -52,13 +58,14 @@ import {
   notations
 } from "../lib/enums";
 import { octaveNotes } from "../lib/notes";
-import pianoRoll from "./piano-roll";
+import pianoRoll from "../components/piano-roll";
 import Chord from "../lib/chord";
 import "./key-view.scss";
 
 const chordFormulaSigns = ["i", "ii", "iii", "iv", "v", "vi", "vii"];
 
 export default {
+  displayName: "Key View",
   props: ["chords"],
   data() {
     return {

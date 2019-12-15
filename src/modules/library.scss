@@ -48,6 +48,7 @@
 
 .library__results {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
 }
 
@@ -75,6 +76,11 @@
 .library__results-item {
   padding: 5px;
   cursor: pointer;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 0;
 }
 
 .library__results-action {

@@ -64,3 +64,4 @@ typings/
 dist
 
 .DS_Store
+./src/modules-map.js

@@ -13,7 +13,7 @@
 <script>
 import { roots } from "../lib/enums";
 import octave from "../lib/octave";
-import pianoRoll from "./piano-roll";
+import pianoRoll from "../components/piano-roll";
 
 export default {
   props: {

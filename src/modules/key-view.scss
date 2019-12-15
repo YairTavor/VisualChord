@@ -1,5 +1,5 @@
 @import "../styles/dropdowns.scss";
-@import "./composer.scss";
+@import "../components/composer.scss";
 
 .key-view__dropdown {
   @extend %dropdown;

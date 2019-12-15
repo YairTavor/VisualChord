@@ -1,5 +1,6 @@
 <template>
   <div>
+    //TODO: set speed as BPM instead of miliseconds
     <div v-if="!currentChord.root && !chords.length" class="chord-player">
       Player will become available as soon as you have at least one chord
       selected in the composer

@@ -1,7 +1,9 @@
 <template>
   <div class="library">
     <div class="library__subtitle">
-      Save the chord in the composer to a file
+      Save the chords in the composer to your browser's local storage.
+      <br />
+      // TODO: add override and delete warnings
     </div>
     <header class="library__header">
       <div class="library__title">
@@ -51,7 +53,7 @@
       <table class="library__results">
         <thead>
           <tr>
-            <th class="library__results-header">Name</th>
+            <th class="library__results-header">File Name</th>
             <th class="library__results-header">Created</th>
             <th class="library__results-header">Description</th>
             <th class="library__results-header">Action</th>
@@ -64,11 +66,15 @@
             @click="setCurrent(file)"
             class="library__results-item-wrapper"
           >
-            <td class="library__results-item">{{ file.name }}</td>
-            <td class="library__results-item">
+            <td class="library__results-item" :title="file.name">
+              {{ file.name }}
+            </td>
+            <td class="library__results-item" :title="file.created">
               {{ file.created }}
             </td>
-            <td class="library__results-item">{{ file.description }}</td>
+            <td class="library__results-item">
+              {{ file.description }}
+            </td>
             <td class="library__results-item">
               <span
                 class="library__results-action"
@@ -84,7 +90,7 @@
 </template>
 
 <script>
-import spinner from "./spinner.vue";
+import spinner from "../components/spinner.vue";
 import generateHash from "random-hash";
 import Chord from "../lib/chord";
 import "./library.scss";

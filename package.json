@@ -25,6 +25,6 @@
     "vue-template-compiler": "^2.6.10"
   },
   "scripts": {
-    "start": "parcel ./src/index.html"
+    "start": "node ./build-scripts/generate-module-map.js && parcel ./src/index.html"
   }
 }
