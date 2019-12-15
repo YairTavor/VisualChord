@@ -35,6 +35,10 @@ VisualChord is split into 3 main parts:
 
 The Composer is where you compose your chord progression. To get started, you will need to click on the blue plus button. This will add a C major chord.
 
+##### Bars
+
+Under each chord you can see how many bars should this chord be sustained. Click on the number to change the number of bars.
+
 ##### Editing
 
 When a chord selected, it will be highlighted in blue. Once selected, you will see the chord editor below. This will allow you to modify the chord however you like. Use the dropdowns to modify the chord's root, quality, extension and bass note.
