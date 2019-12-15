@@ -16,6 +16,7 @@ import octave from "../lib/octave";
 import pianoRoll from "../components/piano-roll";
 
 export default {
+  displayName: "Chord Visualisation",
   props: {
     currentChord: { tyep: Object, default: () => ({}) }
   },

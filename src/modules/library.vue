@@ -96,6 +96,7 @@ import Chord from "../lib/chord";
 import "./library.scss";
 
 export default {
+  displayName: "Library",
   props: ["chords", "setChords"],
   data() {
     return {

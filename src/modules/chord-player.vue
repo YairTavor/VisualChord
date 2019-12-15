@@ -54,6 +54,7 @@ import octave from "../lib/octave";
 import "./chord-player.scss";
 
 export default {
+  displayName: "Player",
   props: ["chords", "currentChord", "next"],
   data() {
     return {
