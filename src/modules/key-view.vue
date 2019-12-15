@@ -1,6 +1,9 @@
 <template>
   <div>
-    <p>key view shows the Available chords and notes in a key.</p>
+    <p>
+      Overview of a key and scale. Shows how keys are built and allows you to
+      copy chords to the Composer.
+    </p>
     <div>
       <select class="key-view__dropdown" v-model="selectedRoot">
         <option v-for="key in Object.keys(roots)" :key="key" :value="roots[key]"
@@ -65,7 +68,7 @@ import "./key-view.scss";
 const chordFormulaSigns = ["i", "ii", "iii", "iv", "v", "vi", "vii"];
 
 export default {
-  displayName: "Key View",
+  displayName: "Keys & Scales",
   props: ["chords"],
   data() {
     return {
