@@ -78,15 +78,41 @@ Use drag and drop to reorder the modules within the Module container.
 
 ### Keys & Scales
 
-// TODO
+Keys & Scales is made to allow you to explore different keys and learn how they are built.
+
+You can set the root and the scale by using the dropdown buttons on the top, and then see all the chords and notes in that key.
+
+To add a chord into the Composer, just click on it.
 
 ### Chord Visualization
 
-// TODO
+The Chord Visualization module will show you how to play the selected chord in the Composer on a piano. For this to work, you need to select one of the chord in the Composer by clicking on it.
 
 ### Library
 
-// TODO
+The Library module allows you to save chord progressions to your browser's local storage.
+
+Initially, you will have no saved files. Once you saved at least one file, you will see a list of all files in the bottom part of the module.
+
+##### Save a new file
+
+To save a new file, specify the file name, description (optional) and click the `Save as new` button.
+
+##### Overriding files
+
+To override an existing file, load the file, optionally modify the file name, description and chord progression in the Composer, and click the `Save` button.
+
+##### Loading files
+
+To load a file, click on it from the file list.
+
+###### Deleting files
+
+In the file list, click on the `Delete` action for the file you wish to delete.
+
+##### IMPORTANT NOTE
+
+If you clear your browser's cache, all files will be permanently lost.
 
 ## Adding new modules
 
