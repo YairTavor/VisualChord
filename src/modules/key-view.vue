@@ -6,18 +6,17 @@
     </p>
     <div>
       <select class="key-view__dropdown" v-model="selectedRoot">
-        <option v-for="key in Object.keys(roots)" :key="key" :value="roots[key]"
-          >{{ roots[key].sign }}
-          {{ roots[key].alternate ? `(${roots[key].alternate})` : "" }}</option
-        >
+        <option v-for="key in Object.keys(roots)" :key="key" :value="roots[key]">
+          {{ roots[key].sign }}
+          {{ roots[key].alternate ? `(${roots[key].alternate})` : "" }}
+        </option>
       </select>
       <select class="key-view__dropdown" v-model="selectedScale">
         <option
           v-for="key in Object.keys(scales)"
           :key="key"
           :value="scales[key]"
-          >{{ scales[key].name }}</option
-        >
+        >{{ scales[key].name }}</option>
       </select>
     </div>
 
@@ -39,9 +38,7 @@
           class="key-view__chord-formula"
           v-for="step in scaleChordsFormula"
           :key="step"
-        >
-          {{ step }}
-        </div>
+        >{{ step }}</div>
       </div>
       <div class="key-view__subtitle">Scale notes:</div>
       <piano-roll :selectedNotes="scaleNotes"></piano-roll>
@@ -60,12 +57,11 @@ import {
   majorMinor,
   notations
 } from "../lib/enums";
+import scale from "../lib/scale";
 import { octaveNotes } from "../lib/notes";
 import pianoRoll from "../components/piano-roll";
 import Chord from "../lib/chord";
 import "./key-view.scss";
-
-const chordFormulaSigns = ["i", "ii", "iii", "iv", "v", "vi", "vii"];
 
 export default {
   displayName: "Keys & Scales",
@@ -80,84 +76,16 @@ export default {
   },
   computed: {
     scaleNotes() {
-      let notes = [];
-      if (this.selectedRoot && this.selectedScale) {
-        const rootIndex = octaveNotes.indexOf(this.selectedRoot.sign);
-        let index = rootIndex;
-        let octave = "4";
-        notes.push(octaveNotes[rootIndex] + octave);
-        this.selectedScale.formula.forEach(step => {
-          index = index + step;
-          if (index > 11) {
-            octave = "5";
-          }
-          notes.push(octaveNotes[index] + octave);
-        });
-      }
-      return notes;
+      return scale.scaleNotes(this.selectedRoot, this.selectedScale);
     },
     scaleNotesFormula() {
-      return (
-        "Root > " +
-        this.selectedScale.formula
-          .map(step => (step === 1 ? "half step" : "whole step"))
-          .join(" > ")
-      );
+      return scale.scaleNotesFormula(this.selectedScale);
     },
     scaleChordsFormula() {
-      const result = [];
-      this.selectedScale.majorMinor.forEach((item, index) => {
-        const quality = this.selectedScale.majorMinorQuality[index];
-        let sign = chordFormulaSigns[index];
-        if (item === majorMinor.major) {
-          sign = sign.toUpperCase();
-        }
-        if (item === majorMinor.diminished) {
-          sign += notations.diminished;
-        }
-        if (quality === majorMinorQuality.flat) {
-          sign += notations.flat;
-        }
-        if (quality === majorMinorQuality.sharp) {
-          sign += notations.sharp;
-        }
-        result.push(sign);
-      });
-      return result;
+      return scale.scaleChordsFormula(this.selectedScale);
     },
     scaleChords() {
-      const notes = this.scaleNotes;
-      const result = [];
-
-      this.selectedScale.majorMinor.forEach((item, index) => {
-        let note = notes[index];
-        note = note.substring(0, note.length - 1);
-        const quality = this.selectedScale.majorMinorQuality[index];
-
-        /* if (quality === majorMinorQuality.flat) {
-          note = octaveNotes[octaveNotes.indexOf(note) - 1];
-          if (!note) {
-            note = "B";
-          }
-        }
-        if (quality === majorMinorQuality.sharp) {
-          note = octaveNotes[octaveNotes.indexOf(note) + 1];
-          if (!note) {
-            note = "C";
-          }
-        } */
-
-        if (item === majorMinor.minor) {
-          note += "m";
-        }
-        if (item === majorMinor.diminished) {
-          note += "dim";
-        }
-
-        result.push(note);
-      });
-
-      return result;
+      return scale.scaleChords(this.selectedRoot, this.selectedScale);
     }
   },
   methods: {

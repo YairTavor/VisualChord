@@ -2,10 +2,7 @@
   <div class="module">
     <header class="module__header">
       <h2 class="module__title">{{ title }}</h2>
-      <span
-        @click="onToggle"
-        :class="`module__toggle${open ? '--open' : '--closed'}`"
-      >
+      <span @click="onToggle" :class="`module__toggle${open ? '--open' : '--closed'}`">
         <font-awesome-icon icon="chevron-circle-down" />
       </span>
       <span @click="onClose" class="module__close">
@@ -13,15 +10,9 @@
       </span>
     </header>
     <div :class="`module__content${open ? '--open' : '--closed'}`">
-      <slot
-        v-if="err"
-        name="error"
-        v-bind:err="err"
-        v-bind:vm="vm"
-        v-bind:info="info"
-      >
+      <slot v-if="err" name="error" v-bind:err="err" v-bind:vm="vm" v-bind:info="info">
         <div class="module__error">
-          Opps, something went wrong and this module cannot be opened.
+          <font-awesome-icon icon="skull" class="module__error-icon"></font-awesome-icon>Opps, something went wrong and this module cannot be opened.
         </div>
       </slot>
       <slot v-else></slot>

@@ -1,0 +1,71 @@
+@import "../styles/dropdowns.scss";
+
+%key-finder-cell {
+  width: 11%;
+  margin: 5px;
+}
+
+.key-finder__description {
+  margin: 20px 0;
+}
+
+.key-finder__search {
+  background: rgba(255, 255, 255, 0.08);
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.key-finder__search-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.key-finder__search-type {
+  @extend %dropdown;
+}
+
+.key-finder__search-description {
+  margin: 10px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.key-finder__row {
+  display: flex;
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.04);
+
+  &:nth-child(odd) {
+    background: rgba(255, 255, 255, 0.01);
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.key-finder__header {
+  @extend %key-finder-cell;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.key-finder__results {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.key-finder__label {
+  @extend %key-finder-cell;
+  font-weight: bold;
+}
+
+.key-finder__value {
+  @extend %key-finder-cell;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.key-finder__value--highlighted {
+  @extend %key-finder-cell;
+  color: #0064d2;
+}

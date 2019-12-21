@@ -78,7 +78,7 @@ Use drag and drop to reorder the modules within the Module container.
 
 ### Player
 
-// TODO
+Play the chord sequence or a single chord. A metronome sound can be toggled on or off, and the speed (BPM) can be set to anything between 65 and 240.
 
 ### Keys & Scales
 
@@ -124,3 +124,9 @@ Modules are just VUE components that run inside a special container called Modul
 To add a new module, simply create a new VUE file under src/modules.
 Make sure your module object (vue script) exposes a `displayName` property, as this will be used in the menu and container title of the module.
 A script will read this folder every time you run `yarn start` and add it to the `modules-map.js` file.
+All modules are injected with some data and functions that can be used:
+
+- chords: An array of all chords in the composer
+- currentChord: The selected chord in the composer
+- setChords: A function that accepts `{ chords, currentChord }` so you could replace/edit the chords
+- next: Set the next chord in the sequence as the current chord

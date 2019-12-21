@@ -10,7 +10,8 @@ import {
   faChevronCircleDown,
   faRetweet,
   faPlay,
-  faStop
+  faStop,
+  faSkull
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -24,7 +25,8 @@ library.add(
   faChevronCircleDown,
   faRetweet,
   faPlay,
-  faStop
+  faStop,
+  faSkull
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

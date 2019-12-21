@@ -169,6 +169,16 @@ export const scales = {
   }
 };
 
+export const scaleTypes = [
+  "major",
+  "dorian",
+  "phrygian",
+  "lydian",
+  "mixolydian",
+  "minor",
+  "locrian"
+];
+
 export const notations = {
   sharp: "♯",
   flat: "♭",
